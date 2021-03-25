@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Android版本下载</title>
+	</head>
+	<body>
+		<script>
+			function getQueryString (name) {
+			  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			  var r = window.location.search.substr(1).match(reg);
+			  if (r != null) return decodeURI(r[2]);
+			  return null;
+			}
+			if(getQueryString('name') && getQueryString('name')=='hrsg'){
+				window.location.href="hrsg.html"
+			}else if(getQueryString('name') && getQueryString('name')=='zxsj'){
+				window.location.href="zxsj.html"
+			}else{
+				window.location.href="error.html"
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>好视芯android下载</title>
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>
+			function init_rem(){var irate=625;var iw=750;var win = window;var w= win.innerWidth;var doc = document;var irate= 625/(iw/w);
+			    irate = Math.min(irate,625);doc.documentElement.style.fontSize = irate + "%";}
+			
+			function initSize() {var _win_h = $(window).innerHeight();
+				// 设置页面最小高度
+				if($('.footer-menu').length) {
+					_win_h = $(window).innerHeight()-$('.footer-menu').outerHeight();
+					$('.footer-menu').css({
+						'position' : 'static'
+					})
+				}
+				$('.main-wrapper').css({
+					'height' : _win_h,
+					'overflow-y': 'scroll'
+				})
+				}
+			init_rem();
+			window.onresize=function(){
+			    init_rem();
+			    initSize();
+			}
+		</script>
+		<style>
+			html, body, nav, menu, ul, ol, li, p, div, form, h1, h2, h3, h4, h5, h6, img, a img, input, button, textarea, fieldset { margin: 0; padding: 0; border: 0 }
+			ul, ol, li { list-style: none }
+			h1, h2, h3, h4, h5, h6, b, i, em { font-weight: normal; font-style: normal; font-size: 1em }
+			body, input, button, textarea, select { outline: 0; color: #333; font: normal 14px/1.5 "PingFang-SC-Medium", "Microsoft YaHei", "Microsoft JhengHei", Helvetica, STHeiti, MingLiu, san-serif; -webkit-text-size-adjust: none }
+			input[type="text"], input[type="password"], input[type="button"], input[type="submit"], button, textarea { cursor: pointer; -webkit-appearance: none; -moz-appearance: button }
+			input:focus:-moz-placeholder, input:focus::-webkit-input-placeholder { color: transparent }
+			input::-ms-clear, input::-ms-reveal { display: none }
+			input[type="submit"], input[type="button"] { star: expression(this.onFocus=this.blur()) }
+			input[type="reset"]::-moz-focus-inner, input[type="button"]::-moz-focus-inner, input[type="submit"]::-moz-focus-inner, input[type="file"] > input[type="button"]::-moz-focus-inner { border: 0; padding: 0 }
+			button::-moz-focus-inner, input::-moz-focus-inner { padding: 0; border: 0 }
+			sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline }
+			sup { top: -0.5em }
+			sub { bottom: -0.25em }
+			table { border-collapse: collapse; border-spacing: 0 }
+			a, a:link { text-decoration: none; color: #333; outline: 0; -webkit-transition: color .5s, background-color .5s, border-color .5s; -moz-transition: color .5s, background-color .5s, border-color .5s; -ms-transition: color .5s, background-color .5s, border-color .5s; -o-transition: color .5s, background-color .5s, border-color .5s; transition: color .5s, background-color .5s, border-color .5s }
+			a:hover { text-decoration: none }
+			a:active { -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125); star: expression(this.onFocus=this.blur()) }
+			html,body{width: 100%;height: 100%;overflow: hidden;}
+			body{background-color: #F7F7F7;}
+			a{display: block;}
+			.container{
+				width: 100%;
+				height: 100%;
+				background: url('https://bsy-glasses.oss-cn-shanghai.aliyuncs.com/apk_bg.jpg') no-repeat center center;
+				/* background: url('./imgs/apk_bg.jpg') no-repeat center center; */
+				background-size: cover;
+				background-attachment: fixed;
+				padding-top:30%;
+				box-sizing: border-box;
+				text-align: center;
+			}
+			.container .main .title{
+				color: #eee;
+				font-weight: bold;
+				font-size: .45rem;
+				padding: .4rem 0;
+				border-bottom: 2px solid #ddd;
+			}
+			.container .main .detail{
+				color: #eee;
+				padding-top: .3rem;
+				font-size: .2rem;
+				flex: 1;
+				margin: 0 .1rem;
+			}
+			.container .main .btn{
+				width: calc(360/750*100vw);
+				height: calc(108/750*100vw);
+				background: url(https://bsy-glasses.oss-cn-shanghai.aliyuncs.com/btn.png) no-repeat 0 0;
+				background-size: 100% 100%;
+				margin: 1rem auto;
+			}
+			.hidden{
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="main">
+				<div class="logo">
+					<img style="width: 1.6rem;height: 1.6rem;" src="https://bsy-glasses.oss-cn-shanghai.aliyuncs.com/hsx_logo.png" alt="">
+				</div>
+				<div class="title">好视芯</div>
+				<div style="display: flex;">
+					<div class="detail store">
+						<div style="font-size: .4rem;padding-top: .2rem;">v1.0.2</div>
+						<div style="font-size: .3rem;padding-top: .1rem;">更新时间2021-01-12</div>
+						<button class="btn mendian" href="javascript:;"></button>
+					</div>
+					<div class="detail customer">
+						<div style="font-size: .4rem;padding-top: .2rem;">v1.0.2</div>
+						<div style="font-size: .3rem;padding-top: .1rem;">更新时间2021-01-12</div>
+						<button class="btn customer" href="javascript:;"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			function getQueryString (name) {
+			  var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+			  var r = window.location.search.substr(1).match(reg);
+			  if (r != null) return decodeURI(r[2]);
+			  return null;
+			}
+			if (getQueryString('type') && getQueryString('type') === 'store') {
+				$('.title').text('好视芯门店版')
+				$('.customer').addClass('hidden')
+			} else if (getQueryString('type') && getQueryString('type') === 'customer') {
+				$('.title').text('好视芯客户版')
+				$('.store').addClass('hidden')
+			} else if (getQueryString('type') && getQueryString('type') === 'all') {
+				
+			} else {
+				window.location.href='error.html'
+			}
+			$(document).on('click','.mendian',function(e){
+				e.stopPropagation()
+				window.location.href="https://bsy-glasses.oss-cn-shanghai.aliyuncs.com/%E5%A5%BD%E8%A7%86%E8%8A%AF%E9%97%A8%E5%BA%97%E7%89%88.apk"
+			})
+			$(document).on('click','.customer',function(e){
+				e.stopPropagation()
+				window.location.href="https://bsy-glasses.oss-cn-shanghai.aliyuncs.com/%E5%A5%BD%E8%A7%86%E8%8A%AF%E5%AE%A2%E6%88%B7%E7%89%88.apk"
+			})
+		</script>
+	</body>
+</html>
