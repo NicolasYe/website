@@ -54,9 +54,6 @@
 
 			.container .main .btn {
 				width: calc(360/750*100vw);
-				/* height: calc(108/750*100vw); */
-				/* background: url('./imgs/btn.png') no-repeat 0 0; */
-				/* background-size: 100% 100%; */
 				margin: 1rem auto;
 				background-color: #fff;
 				border-radius: calc(34 / 750 * 100vw);
@@ -120,7 +117,6 @@
 			  var ua = navigator.userAgent.toLowerCase();//获取判断用的对象
 			  if (ua.match(/MicroMessenger/i) == "micromessenger") {
 			    //在微信中打开
-				console.log('微信')
 				$('.guide').css('display', 'block')
 			  } else if (browser.versions.ios || browser.versions.android) {
 				  $('.guide').css('display', 'none')
@@ -136,7 +132,7 @@
 			  }
 			} else {
 			  //否则就是PC浏览器打开
-			  console.log('pc')
+			  $('.guide').css('display', 'none')
 			  $('.container').css('display', 'none')
 			}
 		</script>
