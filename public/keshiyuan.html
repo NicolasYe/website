@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport"
+			content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>柯视源APP</title>
+		<link rel="stylesheet" href="css/init.css">
+		<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script>
+			function init_rem () {
+				var irate = 625
+				var iw = 750
+				var win = window
+				var w = win.innerWidth
+				var doc = document
+				irate = 625 / ( iw / w )
+				irate = Math.min( irate, 625 )
+				doc.documentElement.style.fontSize = irate + '%'
+			}
+			init_rem()
+			window.onresize = function () {
+				init_rem()
+				window.location.reload()
+			}
+		</script>
+		<style>
+			.container {
+				width: 100%;
+				height: 100%;
+				background: url('./imgs/apk_bg.jpg') no-repeat center center;
+				background-size: cover;
+				background-attachment: fixed;
+				padding-top: 30%;
+				box-sizing: border-box;
+				text-align: center;
+			}
+
+			.container .main .title {
+				color: #eee;
+				font-weight: bolder;
+				font-size: .4rem;
+				padding: .4rem 0;
+				border-bottom: 2px solid #ddd;
+			}
+
+			.container .main .detail {
+				color: #eee;
+				padding-top: .3rem;
+				font-size: .2rem;
+				flex: 1;
+				margin: 0 .1rem;
+			}
+
+			.container .main .btn {
+				width: calc(360/750*100vw);
+				margin: 1rem auto;
+				background-color: #fff;
+				border-radius: calc(34 / 750 * 100vw);
+				padding: calc(20 / 750 * 100vw) 0;
+				text-align: center;
+				color: #4b7ab8;
+				font-weight: bolder;
+			}
+
+			.hidden {
+				display: none;
+			}
+
+			.guide {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background: url(imgs/guide.png) no-repeat 0 0;
+				background-size: 100% 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="guide"></div>
+		<div class="container">
+			<div class="main">
+				<div class="logo">
+					<img style="width: 1.6rem;height: 1.6rem;border-radius: .3rem;"
+						src="https://manon-app.oss-cn-shanghai.aliyuncs.com/logo200%2A200.png" alt="">
+				</div>
+				<div class="title">柯视源APP</div>
+				<div style="display: flex;">
+					<div class="detail">
+						<div style="font-size: .3rem;padding-top: .2rem;font-weight: bolder;">版本：测试</div>
+						<div style="font-size: .3rem;padding-top: .1rem;font-weight: bolder;">更新时间：2021-06-27</div>
+						<button class="btn"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$( '.guide' ).css( 'display', 'none' )
+			$( '.container' ).css( 'display', 'none' )
+			var browser = {
+				versions: function () {
+					var u = navigator.userAgent
+					return { //移动终端浏览器版本信息
+						trident: u.indexOf( 'Trident' ) > -1, //IE内核
+						presto: u.indexOf( 'Presto' ) > -1, //opera内核
+						webKit: u.indexOf( 'AppleWebKit' ) > -1, //苹果、谷歌内核
+						gecko: u.indexOf( 'Gecko' ) > -1 && u.indexOf( 'KHTML' ) == -1, //火狐内核
+						mobile: !!u.match( /AppleWebKit.*Mobile.*/ ), //是否为移动终端
+						ios: !!u.match( /\(i[^;]+;( U;)? CPU.+Mac OS X/ ), //ios终端
+						android: u.indexOf( 'Android' ) > -1 || u.indexOf( 'Linux' ) > -1, //android终端或uc浏览器
+						iPhone: u.indexOf( 'iPhone' ) > -1, //是否为iPhone或者QQHD浏览器
+						iPad: u.indexOf( 'iPad' ) > -1, //是否iPad
+						webApp: u.indexOf( 'Safari' ) == -1 //是否web应该程序，没有头部与底部
+					}
+				}(),
+				language: ( navigator.browserLanguage || navigator.language ).toLowerCase()
+			}
+			if ( browser.versions.mobile ) { //判断是否是移动设备打开。browser代码在下面
+				var ua = navigator.userAgent.toLowerCase() //获取判断用的对象
+				if ( ua.match( /MicroMessenger/i ) == 'micromessenger' ) {
+					//在微信中打开
+					$( '.guide' ).css( 'display', 'block' )
+				} else if ( browser.versions.ios || browser.versions.android ) {
+					$( '.container' ).css( 'display', 'block' )
+					if ( browser.versions.android ) {
+						$( '.btn' ).text( 'Android下载' )
+					} else if ( browser.versions.ios ) {
+						$( '.btn' ).text( '暂无IOS版本' )
+					}
+					$( document ).on( 'click', '.btn', function ( e ) {
+						e.stopPropagation()
+						if ( browser.versions.ios ) return false
+						window.location.href = 'https://manon-app.oss-cn-shanghai.aliyuncs.com/apk/%E6%9F%AF%E8%A7%86%E6%BA%90.apk'
+					} )
+				}
+			} else {
+				//否则就是PC浏览器打开
+			}
+		</script>
+	</body>
+</html>
