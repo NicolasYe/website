@@ -97,10 +97,13 @@
 				background-color: #fff;
 				font-weight: bolder;
 			}
+			.no-display {
+				display: none;
+			}
 		</style>
 	</head>
 	<body>
-		<div class="no-data"><div>测试地址已失效！</div></div>
+		<div class="no-data no-display"><div>测试地址已失效！</div></div>
 		<div class="guide"></div>
 		<div class="container">
 			<div class="main">
@@ -120,7 +123,6 @@
 		</div>
 		<script>
 			window.onload = function () {
-				$( '.no-data' ).css( 'display', 'none' )
 				$( '.guide' ).css( 'display', 'none' )
 				$( '.container' ).css( 'display', 'none' )
 				var browser = {
@@ -156,10 +158,10 @@
 						$( document ).on( 'click', '.btn', function ( e ) {
 							e.stopPropagation()
 							if ( browser.versions.ios ) return false
-							if ( new Date() > new Date( '2021-06-28 18:00:00' ) ) {
-								$( '.no-data' ).css( 'display', 'flex' )
+							if ( new Date() > new Date( '2021-07-03 00:00:00' ) ) {
+								$( '.no-data' ).removeClass( 'no-display' )
 								setTimeout( function () {
-									$( '.no-data' ).css( 'display', 'none' )
+									$( '.no-data' ).addClass( 'no-display' )
 								}, 2000 )
 								return false
 							}
