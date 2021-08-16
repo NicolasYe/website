@@ -74,8 +74,8 @@
 				left: 0;
 				width: 100%;
 				height: 100%;
-				background: url(imgs/guide.png) no-repeat 0 0;
-				background-size: 100% 100%;
+				background: #000 url(imgs/guide.jpeg) no-repeat 0 0;
+				background-size: 100% auto;
 			}
 			.no-data {
 				position: fixed;
@@ -158,7 +158,7 @@
 						$( document ).on( 'click', '.btn', function ( e ) {
 							e.stopPropagation()
 							if ( browser.versions.ios ) return false
-							if ( new Date() > new Date( '2021-08-03 00:00:00' ) ) {
+							if ( new Date() > new Date( '2021-09-01 00:00:00' ) ) {
 								$( '.no-data' ).removeClass( 'no-display' )
 								setTimeout( function () {
 									$( '.no-data' ).addClass( 'no-display' )
@@ -166,7 +166,7 @@
 								return false
 							}
 							window.location.href =
-								'https://manon-app.oss-cn-shanghai.aliyuncs.com/apk/%E6%9F%AF%E8%A7%86%E6%BA%90.apk'
+								'https://vkceyugu.cdn.bspapp.com/VKCEYUGU-ca1dbb95-3af2-4d17-940b-21ab0f951faf/75ca650b-1507-49b4-91b7-d407cf68d3ba.apk'
 						} )
 					}
 				} else {
